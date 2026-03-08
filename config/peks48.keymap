@@ -2,62 +2,72 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-
     behaviors {
+
         layer_cycle: layer_cycle {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-tap-dance";
             label = "LAYER_CYCLE";
             #binding-cells = <0>;
-            bindings =
-                <&to 1>,
-                <&to 2>,
-                <&to 3>,
-                <&to 0>;
+            tapping-term-ms = <200>;
+
+            bindings = <
+                &to 0
+                &to 1
+                &to 2
+                &to 3
+            >;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
+        /* -------- Layer 0 -------- */
+
         default_layer {
 
             bindings = <
-&kp TAB   &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I    &kp O    &kp P    &kp PLUS
-&kp ESC   &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp MINUS
-&kp LSHFT &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT &kp UP   &kp SLASH
-&kp ESC   &kp LCTRL &kp LGUI &kp LALT &kp SPACE &mo 1      &kp DEL  &kp ENTER &layer_cycle &kp LEFT &kp DOWN &kp RIGHT
+&kp TAB   &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I     &kp O    &kp P    &kp PLUS
+&kp F7    &kp A    &kp S    &kp D    &kp F    &kp G        &kp H    &kp J    &kp K     &kp L    &kp SEMI &kp MINUS
+&kp LSHFT &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp UP   &kp SLASH
+&kp ESC   &kp LCTRL &kp LGUI &kp LALT &kp SPACE &kp LANG1  &kp DEL  &kp ENTER &layer_cycle &kp LEFT &kp DOWN &kp RIGHT
             >;
         };
+
+        /* -------- Layer 1 -------- */
 
         layer_1 {
 
             bindings = <
-&trans &kp N7 &kp N8 &kp N9 &trans &trans      &kp AT  &kp QUESTION &kp LPAR &kp RPAR &kp LT &kp GT
-&trans &kp N4 &kp N5 &kp N6 &trans &trans      &trans  &kp UNDER    &kp PIPE &kp TILDE &kp PERCENT &kp DLLR
-&trans &kp N1 &kp N2 &kp N3 &trans &trans      &trans  &trans       &kp EXCL &kp HASH &kp DQT &trans
-&trans &kp N0 &trans &trans &trans &trans      &trans  &trans       &layer_cycle &trans &trans &trans
+&trans &kp N7 &kp N8 &kp N9 &trans &trans        &kp AT  &kp QUESTION &kp LPAR &kp RPAR &kp LT &kp GT
+&trans &kp N4 &kp N5 &kp N6 &trans &trans        &trans  &kp UNDER    &kp PIPE &kp TILDE &kp PERCENT &kp DLLR
+&trans &kp N1 &kp N2 &kp N3 &trans &trans        &trans  &trans       &kp EXCL &kp HASH  &kp DQT &trans
+&trans &kp N0 &trans &trans &trans &trans        &trans  &trans       &layer_cycle &trans &trans &trans
             >;
         };
+
+        /* -------- Layer 2 -------- */
 
         layer_2 {
 
             bindings = <
-&trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5      &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
-&trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans &layer_cycle &trans &trans &trans
+&trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5        &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+&trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans        &trans &trans &layer_cycle &trans &trans &trans
             >;
         };
+
+        /* -------- Layer 3 -------- */
 
         layer_3 {
 
             bindings = <
-&trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans      &trans &trans &layer_cycle &trans &trans &trans
+&trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans        &trans &trans &layer_cycle &trans &trans &trans
             >;
         };
-
     };
 };
