@@ -1,8 +1,8 @@
 include:
   - board: seeeduino_xiao_ble
-    shield: peks48_r rgbled_adapter
+    shield: peks48_r
     snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
-    shield: peks48_l rgbled_adapter
+    shield: peks48_l
   - board: seeeduino_xiao_ble
     shield: settings_reset
