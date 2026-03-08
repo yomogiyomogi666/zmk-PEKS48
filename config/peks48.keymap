@@ -37,25 +37,39 @@
 };
 
 / {
+　　/ {
+
+    behaviors {
+        bt_cycle: bt_cycle {
+            compatible = "zmk,behavior-macro";
+            label = "BT_CYCLE";
+            #binding-cells = <0>;
+            bindings =
+                <&bt BT_SEL 0>,
+                <&bt BT_SEL 1>,
+                <&bt BT_SEL 2>,
+                <&bt BT_SEL 3>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp TAB     &kp Q      &kp W     &kp E     &kp R             &kp T               &kp Y            &kp U        &kp I        &kp O           &kp P           &kp DELETE
-&kp LCTRL   &kp A      &kp S     &kp D     &kp F             &kp G               &kp H            &kp J        &kp K        &kp L           &kp SEMICOLON   &kp MINUS
+&kp TAB     &kp Q      &kp W     &kp E     &kp R             &kp T               &kp Y            &kp U        &kp I        &kp O           &kp P          &kp JP_PLUS
+&kp LG(D)  &kp A      &kp S     &kp D     &kp F             &kp G               &kp H            &kp J        &kp K        &kp L           &kp SEMICOLON   &kp MINUS
 &kp LSHIFT  &kp Z      &kp X     &kp C     &kp V             &kp B               &kp N            &kp M        &kp COMMA    &kp DOT         &kp UP_ARROW    &kp SLASH
-&kp ESC     &kp LCTRL  &kp LWIN  &kp LALT  &mt LSHIFT SPACE  &lt 1 JP_HANZEN     &lt 2 BACKSPACE  &lt 3 ENTER  &kp JP_QUOTE &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW 
+&kp ESC     &kp LCTRL  &kp LWIN  &kp LALT  &kp SPACE  &kp JP_KANA     &kp ENTER  &layer_cycle  &kp JP_DQUOTE &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW 
             >;
         };
 
         layer_1 {
             bindings = <
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4     &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &trans
-&trans  &trans        &trans        &kp JP_LBRACKET  &kp JP_RBRACKET  &trans          &trans        &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6  &kp JP_COLON   &kp JP_UNDERSCORE
-&trans  &trans        &trans        &kp JP_LPAREN    &kp JP_RPAREN    &trans          &trans        &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3  &kp PIPE       &trans
-&trans  &trans        &trans        &trans           &trans           &trans          &trans        &kp NUMBER_1   &kp JP_DQUOTE  &trans        &trans         &trans
+&trans   &kp N7  &kp N8  &kp N9     &trans     &trans    &kp AT  &kp QUESTION   &kp LPAR   &kp RPAR  &kp LT   &kp GT
+&trans   &kp N4  &kp N5  &kp N6 &trans  &trans  &trans   &trans        &kp UNDER    &kp YEN    &kp TILDE  &kp PERCENT   &kp DLLR &kp AMPS
+&trans   &kp N1  &kp N2  &kp N3  &trans &trans  &trans   &trans        &kp EXCL   &kp LANG1    &trans   &trans        &trans
+&trans   &kp N0      &trans        &trans           &trans           &kp DEL         &kp C_CONV       &layer_cycle   &trans   &trans        &trans         &trans
             >;
         };
 
@@ -89,7 +103,7 @@
         layer_5 {
             bindings = <
 &trans  &trans  &trans    &trans    &trans    &trans    &trans  &trans    &trans    &trans    &trans  &trans
-&trans  &trans  &mkp MB3  &mkp MB2  &mkp MB1  &trans    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans
 &trans  &trans  &trans    &trans    &trans    &trans    &trans  &trans    &trans    &trans    &trans  &trans
                                     &trans    &trans    &trans  &trans
             >;
