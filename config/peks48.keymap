@@ -55,7 +55,7 @@
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4     &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0   &trans
 &trans  &trans        &trans        &kp JP_LBRACKET  &kp JP_RBRACKET  &trans          &trans        &kp NUMBER_4   &kp NUMBER_5   &kp NUMBER_6  &kp JP_COLON   &kp JP_UNDERSCORE
 &trans  &trans        &trans        &kp JP_LPAREN    &kp JP_RPAREN    &trans          &trans        &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3  &kp PIPE       &trans
-&trans  &trans        &trans        &trans           &trans           &trans          &trans        &kp NUMBER_0   &kp JP_DQUOTE  &trans        &trans         &trans
+&trans  &trans        &trans        &trans           &trans           &trans          &trans        &kp NUMBER_1   &kp JP_DQUOTE  &trans        &trans         &trans
             >;
         };
 
