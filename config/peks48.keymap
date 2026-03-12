@@ -21,37 +21,37 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer0 {
+        /* ---------------- Layer 0 ---------------- */
 
+        layer0 {
             bindings = <
-&kp TAB   &kp Q   &kp W   &kp E   &kp R   &kp T      &kp Y   &kp U   &kp I   &kp O   &kp P      &kp PLUS
-&kp LCTRL &kp A   &kp S   &kp D   &kp F   &kp G      &kp H   &kp J   &kp K   &kp L   &kp SEMI   &kp MINUS
-&kp LSHFT &kp Z   &kp X   &kp C   &kp V   &kp B      &kp N   &kp M   &kp COMMA &kp DOT &kp UP   &kp SLASH
+&kp TAB   &kp Q   &kp W   &kp E   &kp R   &kp T      &kp Y   &kp U   &kp I   &kp O   &kp P   &kp PLUS
+&kp LCTRL &kp A   &kp S   &kp D   &kp F   &kp G      &kp H   &kp J   &kp K   &kp L   &kp SEMI &kp MINUS
+&kp LSHFT &kp Z   &kp X   &kp C   &kp V   &kp B      &kp N   &kp M   &kp COMMA &kp DOT &kp UP &kp SLASH
 &kp ESC   &kp LCTRL &kp LGUI &kp LALT &kp SPACE &kp LANG1   &kp DEL &kp ENTER &layer_cycle &kp LEFT &kp DOWN &kp RIGHT
             >;
-
         };
+
+        /* ---------------- Layer 1 (Numbers + Symbols) ---------------- */
 
         layer1 {
-
             bindings = <
-&kp N7 &kp N8 &kp N9 &trans &trans &trans     &kp AT   &kp PLUS  &kp MINUS &kp LPAR &kp RPAR &kp EXCL
-&kp N4 &kp N5 &kp N6 &trans &trans &trans     &kp HASH &kp DLLR  &kp PRCNT &kp AMPS &kp DQT  &kp QMARK
-&kp N1 &kp N2 &kp N3 &trans &trans &trans     &kp LBKT &kp RBKT  &kp LT    &kp GT   &kp DOT  &kp COMMA
-&kp N0 &trans &trans &trans &trans &kp LANG1  &kp DEL  &kp ENTER &layer_cycle &kp UNDER &kp EQUAL &kp YEN
+&kp N7 &kp N8 &kp N9 &none &none &none     &kp AT   &kp PLUS  &kp MINUS &kp LPAR &kp RPAR &kp EXCL
+&kp N4 &kp N5 &kp N6 &none &none &none     &kp HASH &kp DLLR  &kp PRCNT &kp AMPS &kp DQT  &kp QUESTION
+&kp N1 &kp N2 &kp N3 &none &none &none     &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LT &kp GT &kp DOT &kp COMMA
+&kp N0 &none &none &none &none &kp LANG1   &kp DEL &kp ENTER &layer_cycle &kp UNDERSCORE &kp EQUAL &kp INT3
             >;
-
         };
 
+        /* ---------------- Layer 2 (Function keys) ---------------- */
+
         layer2 {
-
             bindings = <
-&kp F1 &kp F2 &kp F3 &kp F4 &trans &trans     &trans &trans &trans &trans &trans &trans
-&kp F5 &kp F6 &kp F7 &kp F8 &trans &trans     &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &kp LANG1  &kp DEL &kp ENTER &layer_cycle &kp LEFT &kp DOWN &kp RIGHT
+&kp F1 &kp F2 &kp F3 &kp F4 &none &none     &none &none &none &none &none &none
+&kp F5 &kp F6 &kp F7 &kp F8 &none &none     &none &none &none &none &none &none
+&none  &none  &none  &none  &none &none     &none &none &none &none &none &none
+&none  &none  &none  &none  &none &kp LANG1 &kp DEL &kp ENTER &layer_cycle &kp LEFT &kp DOWN &kp RIGHT
             >;
-
         };
 
     };
